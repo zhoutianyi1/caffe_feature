@@ -32,7 +32,7 @@ class FlowExtractor(object):
         else:
             import cv2
             ret = np.zeros((n_out*2, new_size[1], new_size[0]))
-            for i in xrange(n_out):
+            for i in range(n_out):
                 ret[2*i, :] = cv2.resize(np.fromstring(rst[i][0], dtype='uint8').reshape(frame_size), new_size)
                 ret[2*i+1, :] = cv2.resize(np.fromstring(rst[i][1], dtype='uint8').reshape(frame_size), new_size)
 
@@ -56,4 +56,4 @@ if __name__ == "__main__":
     plt.imshow(im1)
     plt.show()
 
-    print flow_frames
+    print(flow_frames)
