@@ -6,7 +6,7 @@ This file contains the setting for running ActivityNet related experiments.
 """
 
 ANET_CFG = EasyDict()
-ANET_CFG.ANET_HOME = os.getenv("ANET_HOME",None)
+ANET_CFG.ANET_HOME = "/content/caffe_feature"
 if ANET_CFG.ANET_HOME is None:
     raise ValueError("To use this package, "
                      "set the environmental variable \"ANET_HOME\" to the root director of the codebase")
