@@ -10,7 +10,7 @@ python classify_video.py <video name>
 """
 
 import os
-anet_home = "/content/caffe_feature"
+anet_home = "/root/caffe_feature"
 import sys
 sys.path.append(anet_home)
 
