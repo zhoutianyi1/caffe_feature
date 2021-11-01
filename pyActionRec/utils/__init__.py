@@ -1,7 +1,7 @@
 import logging
 import sys
 
-from media_files import *
+from .media_files import *
 
 _formatter = logging.Formatter('%(asctime)s - %(filename)s:%(lineno)d - [%(levelname)s] %(message)s')
 _ch = logging.StreamHandler()

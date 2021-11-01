@@ -1,6 +1,6 @@
-from config import ANET_CFG
+from .config import ANET_CFG
 
-from utils import *
+from .utils import *
 import os
 
 logger = get_logger()

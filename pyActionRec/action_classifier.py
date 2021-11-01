@@ -1,8 +1,8 @@
 from __future__ import unicode_literals
-from action_caffe import CaffeNet
-from action_flow import FlowExtractor
-from video_proc import VideoProc
-from anet_db import Video
+from .action_caffe import CaffeNet
+from .action_flow import FlowExtractor
+from .video_proc import VideoProc
+from .anet_db import Video
 from utils.video_funcs import sliding_window_aggregation_func, default_fusion_func
 import numpy as np
 import time
@@ -118,7 +118,7 @@ class ActionClassifier(object):
         mask = [True] * self.__num_net
         n_model = self.__num_net
         if model_mask is not None:
-            for i in xrange(len(model_mask)):
+            for i in range(len(model_mask)):
                 mask[i] = model_mask[i]
                 if not mask[i]:
                     n_model -= 1
@@ -157,11 +157,11 @@ class ActionClassifier(object):
             all_scores.append(frm_scores)
             end = time.clock()
             elapsed = end - start
-            print "frame sample {}: {} second".format(cnt, elapsed)
+            print ("frame sample {}: {} second".format(cnt, elapsed))
 
         # aggregate frame-wise scores
         agg_scores = []
-        for i in xrange(n_model):
+        for i in range(n_model):
             model_scores = sliding_window_aggregation_func(np.array([x[i] for x in all_scores]), norm=False)
             agg_scores.append(model_scores)
 
@@ -169,7 +169,7 @@ class ActionClassifier(object):
 
         all_end = time.clock()
         total_time = all_end - all_start
-        print "total time: {} second".format(total_time)
+        print ("total time: {} second".format(total_time))
 
         return final_scores, all_scores, total_time
 

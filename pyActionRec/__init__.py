@@ -1,3 +1,3 @@
-from config import ANET_CFG
+from .config import ANET_CFG
 
-import anet_db
+from .anet_db import *

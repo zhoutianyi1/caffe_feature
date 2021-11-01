@@ -1,4 +1,4 @@
-from config import ANET_CFG
+from .config import ANET_CFG
 
 import sys
 
